@@ -86,7 +86,7 @@ export default function Store(props) {
    
     
   if (!socket) {
-      socket = io(":3001");
+      socket = io(":80");
       
     socket.on("chat msg", function(msg) {
       console.log('MSG del socket di ritorno' + msg);
