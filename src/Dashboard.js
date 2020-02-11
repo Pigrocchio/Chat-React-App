@@ -88,7 +88,7 @@ console.log('Active TOPIC ' + activeTopic);
           <div className={classes.topicWindow}>
             <List>
               <Typography fontStyle="italic">
-                TOPIC
+                Select a topic:
               </Typography>
 
               {topics.map(topic => (

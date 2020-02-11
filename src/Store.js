@@ -93,7 +93,7 @@ export default function Store(props) {
    
     
   if (!socket) {
-    socket = io();
+    socket = io(`:${PORT}`); //socket.io = () for Heroku
       
     socket.on("chat msg", function(msg) {
       console.log('MSG del socket di ritorno' + msg);
