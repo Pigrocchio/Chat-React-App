@@ -66,7 +66,7 @@ export default function Dashboard() {
   
   const topics = Object.keys(allChats.chat)
   console.log('Solo nomi per la stanza attiva ' + topics)
-  console.log(allChats)
+  console.log(allChats.nickname[1].avatar)
      console.log("message:" + JSON.stringify(allChats.chat));
   
 
@@ -118,7 +118,7 @@ console.log('Active TOPIC ' + activeTopic);
             variant="contained"
             color="primary"
             onClick={() => {
-              sendChatAction({ chat: chat, from: allChats.nickname.from, msg: textValue, topic: activeTopic, avatar: allChats.nickname.avatar });
+              sendChatAction({ chat: chat, from: allChats.nickname[1].from, msg: textValue, topic: activeTopic, avatar: allChats.nickname[1].avatar });
               changeTextValue("");
             }}
           >

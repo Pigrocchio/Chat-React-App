@@ -1,7 +1,6 @@
 import React from 'react';
 import io from 'socket.io-client'
 import AnimalAvatar from 'animal-avatars.js'
-const PORT = process.env.PORT;
 
 
 export const CTX = React.createContext();
@@ -17,7 +16,7 @@ console.log(profileImage2);
 
 const initState = {
   user: false,
-  nickname: { from: "", avatar: profileImage2 },
+  nickname: [{ from: "", avatar: profileImage2 }],
   chat: {
     general: [{ from: "Gino", msg: "ciao", avatar: profileImage }],
     holidays: [
@@ -55,12 +54,17 @@ function reducer (state, action) {
         return {
           ...state,
           user: true,
-          nickname: {
-            
-            from: from,
-            avatar: [...state.nickname.avatar].join('')   
-              },
-            };
+          nickname: [
+            ...state.nickname,
+            {
+              
+              ...state.nickname[0], 
+              from,
+              
+              
+            }
+          ]
+        };
             
                default:
         return state;
@@ -87,7 +91,7 @@ export default function Store(props) {
    
     
   if (!socket) {
-      socket = io(`:${PORT}`);
+      socket = io(":3001");
       
     socket.on("chat msg", function(msg) {
       console.log('MSG del socket di ritorno' + msg);

@@ -4,7 +4,7 @@ var io = require("socket.io")(http);
 const express = require("express");
 const path = require("path");
 const PORT =
-  process.env.PORT || 80
+  process.env.PORT || 3001
 
 
 app.use(express.static(path.join(__dirname, "../../build")));
@@ -32,6 +32,6 @@ io.on("connection", function (socket) {
   });
 });
 
-http.listen(PORT, function () {
-  console.log(`listening on *:${PORT}`);
+http.listen(3001, function() {
+  console.log("listening on *:3001");
 });
