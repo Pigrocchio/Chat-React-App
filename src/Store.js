@@ -1,7 +1,7 @@
 import React from 'react';
 import io from 'socket.io-client'
 import AnimalAvatar from 'animal-avatars.js'
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 
 export const CTX = React.createContext();
@@ -92,7 +92,7 @@ export default function Store(props) {
    
     
   if (!socket) {
-    socket = io(`:${port}`);
+    socket = io(`:${PORT}`);
       
     socket.on("chat msg", function(msg) {
       console.log('MSG del socket di ritorno' + msg);
