@@ -3,7 +3,7 @@ import './App.css';
 import Store from './Store'
 import Layout from './Layout'
 
-
+console.log(process.env.REACT_APP_PORT)
 
 function App() {
   

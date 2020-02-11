@@ -1,3 +1,3 @@
 
 web: node ./src/server/index.js
-client: node ./src/ap.js
+client: node ./src/app.js
