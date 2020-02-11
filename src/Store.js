@@ -1,7 +1,7 @@
 import React from 'react';
 import io from 'socket.io-client'
 import AnimalAvatar from 'animal-avatars.js'
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 
 export const CTX = React.createContext();
