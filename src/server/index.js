@@ -3,8 +3,8 @@ var http = require("http").createServer(app);
 var io = require("socket.io")(http);
 const express = require("express");
 const path = require("path");
-const PORT =
-  process.env.PORT || 3001
+
+const port = process.env.PORT || 5000
 
 
 app.use(express.static(path.join(__dirname, "../../build")));
@@ -32,6 +32,6 @@ io.on("connection", function (socket) {
   });
 });
 
-http.listen(3001, function() {
-  console.log("listening on *:3001");
+http.listen(port, function() {
+  console.log(`listening on *:${port}`);
 });
